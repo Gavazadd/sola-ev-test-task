@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "charging_stations",
+  "info": {
+    "singularName": "charging-station",
+    "pluralName": "charging-stations",
+    "displayName": "Charging_station",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "maxLength": 50
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "maxLength": 500
+    },
+    "email_adress": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "email"
+    },
+    "geo_coordinates": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "maxLength": 50
+    },
+    "isPublic": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "required": true
+    },
+    "charging_connectors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::charging-connector.charging-connector",
+      "mappedBy": "charging_station"
+    }
+  }
+}
